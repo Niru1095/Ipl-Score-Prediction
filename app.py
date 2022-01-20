@@ -87,7 +87,7 @@ def predict():
         runs_in_prev_5 = int(request.form['runs_in_prev_5'])
         wickets_in_prev_5 = int(request.form['wickets_in_prev_5'])
         
-        temp_array = temp_array + [overs, runs, wickets, runs_in_prev_5, wickets_in_prev_5]
+        temp_array = [runs, wickets, overs,  runs_in_prev_5, wickets_in_prev_5] + temp_array
         
         data = np.array([temp_array])
         my_prediction = int(regressor.predict(data)[0])
